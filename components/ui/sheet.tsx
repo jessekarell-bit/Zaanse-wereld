@@ -50,9 +50,11 @@ export function SheetTrigger({
 
 export function SheetContent({ 
   side = "right",
+  className,
   children 
 }: { 
   side?: "left" | "right" | "top" | "bottom"
+  className?: string
   children: React.ReactNode 
 }) {
   const context = React.useContext(SheetContext)
@@ -71,7 +73,8 @@ export function SheetContent({
         side === "right" && "right-0 top-0 h-full w-[300px] sm:w-[400px]",
         side === "left" && "left-0 top-0 h-full w-[300px] sm:w-[400px]",
         side === "top" && "top-0 left-0 right-0 h-auto",
-        side === "bottom" && "bottom-0 left-0 right-0 h-auto"
+        side === "bottom" && "bottom-0 left-0 right-0 h-auto",
+        className
       )}>
         {children}
       </div>
